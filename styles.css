@@ -1,0 +1,62 @@
+/* SIMPLE BROWSER RESET  */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  padding: 0;
+  margin: 0;
+}
+
+/* SETTING UP GRID LAYOUT TO POSITION INNER BOXES  */
+.animation-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3rem auto 0;
+  width: 900px;
+  height: 80vh;
+}
+
+/* SETTING UP BOX DEFAULT STYLES, EX - FONT SIZES, BORDERS  */
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+div:not(:nth-child(2)) {
+  border: 2px solid #000;
+}
+
+.one {
+  animation: one 3s infinite;
+}
+
+.two {
+  background: #fff;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.three {
+
+}
+
+/* ANIMATIONS  */
+@keyframes one {
+  0% {
+    background: blue;
+    color: #fff;
+  }
+  50% {
+    background: #ecc713;
+    color: #000;
+  }
+  100% {
+    background: blue;
+    color: #fff;
+  }
+}
