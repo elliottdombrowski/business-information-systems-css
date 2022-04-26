@@ -1,3 +1,6 @@
+/* IMPORTING SIMILAR STYLE via GOOGLE FONTS  */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito&display=swap');
+
 /* SIMPLE BROWSER RESET  */
 * {
   box-sizing: border-box;
@@ -9,13 +12,25 @@ body {
   margin: 0;
 }
 
+/* SETTING UP VARIABLES FOR REUSED COLORS */
+:root {
+  --blue: #0000fe;
+  --yellow: #ecc713;
+  --black: #000;
+  --white: #fff;
+  --font: 'Anton', sans-serif;
+}
+
+
 /* SETTING UP GRID LAYOUT TO POSITION INNER BOXES  */
 .animation-grid-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 3rem auto 0;
-  width: 900px;
-  height: 80vh;
+  padding: 1rem;
+  background: var(--white);
+  width: 800px;
+  height: 700px;
 }
 
 /* SETTING UP BOX DEFAULT STYLES, EX - FONT SIZES, BORDERS  */
@@ -23,12 +38,14 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 28px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 1px;
 }
 
 div:not(:nth-child(2)) {
-  border: 2px solid #000;
+  border: 2px solid var(--black);
 }
 
 .one {
@@ -36,9 +53,9 @@ div:not(:nth-child(2)) {
 }
 
 .two {
-  background: #fff;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  background: var(--white);
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
 }
 
 .two p {
@@ -46,22 +63,31 @@ div:not(:nth-child(2)) {
 }
 
 .three {
+  position: relative;
+  background: var(--blue);
+}
 
+.three p {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  animation: three 3s infinite;
 }
 
 /* ANIMATIONS  */
 @keyframes one {
   0% {
-    background: blue;
-    color: #fff;
+    background: var(--blue);
+    color: var(--white);
   }
   50% {
-    background: #ecc713;
-    color: #000;
+    background: var(--yellow);
+    color: var(--black);
   }
   100% {
-    background: blue;
-    color: #fff;
+    background: var(--blue);
+    color: var(--white);
   }
 }
 
@@ -71,5 +97,31 @@ div:not(:nth-child(2)) {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes three {
+  0% {
+    color: var(--black);
+  }
+  25% {
+    top: 82%;
+    color: var(--white);
+  }
+  50% {
+    color: var(--black);
+  }
+  75% {
+    top: 10%;
+    color: var(--white);
+  }
+}
+
+@keyframes three-text-color {
+  0% {
+    color: var(--black);
+  }
+  50% {
+    color: var(--white);
   }
 }
